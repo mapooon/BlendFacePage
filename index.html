@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="BlendFace provides well-disentangled identity features for face-swapping.">
+  <meta name="keywords" content="Face-Swapping, GAN, ArcFace">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlendFace: Re-designing Identity Encoders for Face-Swapping</title>
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">BlendFace: Re-designing Identity Encoders for Face-Swapping</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://mapooon.github.io/">Kaede Shiohara</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://yangxingchao.github.io/">Xingchao Yang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://taketomitakafumi.sakura.ne.jp/web/">Takafumi Taketomi</a><sup>2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The University of Tokyo,</span>
+            <span class="author-block"><sup>2</sup>CyberAgent AI Lab<br>International Conference on Computer Vision (ICCV) 2023</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2307.10854"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              
+             
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/mapooon/BlendFace"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/teaser.jpg" alt="Banner image" height="100%">
+        <h2 class="subtitle has-text-centered"><br>
+          The direct use of face recognition models (e.g., ArcFace) for face-swapping causes attribute leakage. 
+          Our novel identity encoder BlendFace provides well-disentangled identity features for face-swapping.
+        </h2>
+    </div>
+    
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The great advancements of generative adversarial networks and face recognition models in computer vision have made it possible to swap identities on images from single sources. 
+            Although a lot of studies seems to have proposed almost satisfactory solutions, we notice previous methods still suffer from an identity-attribute entanglement that causes undesired attributes swapping because widely used identity encoders, eg, ArcFace, have some crucial attribute biases owing to their pretraining on face recognition tasks.
+            To address this issue, we design BlendFace, a novel identity encoder for face-swapping. The key idea behind BlendFace is training face recognition models on blended images whose attributes are replaced with those of another mitigates inter-personal biases such as hairsyles. 
+            BlendFace feeds disentangled identity features into generators and guides generators properly as an identity loss function. 
+            Extensive experiments demonstrate that BlendFace improves the identity-attribute disentanglement in face-swapping models, maintaining a comparable quantitative performance to previous methods.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+  
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Attribute leakage problem in face recognition models</h2>
+          <p>
+            We examine identity similarity distributions between anchor and positive, negative, and swapped. 
+            The result shows that ArcFace underestimates the similarity for swapped images, resulting in the excessive identity guidance.
+            We solve this problem by simply training ArcFace with swapped images to bridge the gap between positive and swapped.
+          </p>
+          <img src="static/images/distribution.jpg" alt="Banner image" height="100%">
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-3">Comparison with previous models</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              Previous ArcFace-based face-swapping models generate inconsistent face boundaries between the swapped region and the original region.
+              BlendFace boosts the consistency of the swapped faces while keeping the fidelity of the identity similarity.
+            </p>
+            <img src="static/images/result.jpg" alt="Banner image" height="100%">
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+    
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{shiohara2023blendface,
+  author    = {Shiohara, Kaede and Yang, Xingchao and Taketomi, Takafumi},
+  title     = {BlendFace: Re-designing Identity Encoders for Face-Swapping},
+  booktitle   = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
