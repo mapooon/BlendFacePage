@@ -7,7 +7,37 @@
   <meta name="keywords" content="Face-Swapping, GAN, ArcFace">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BlendFace: Re-designing Identity Encoders for Face-Swapping</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
 </head>
 <body>
 
@@ -23,13 +53,12 @@
             <span class="author-block">
               <a href="https://yangxingchao.github.io/">Xingchao Yang</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://taketomitakafumi.sakura.ne.jp/web/">Takafumi Taketomi</a><sup>2</sup>,
+              <a href="https://taketomitakafumi.sakura.ne.jp/web/">Takafumi Taketomi</a><sup>2</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>The University of Tokyo,</span>
-            <span class="author-block"><sup>2</sup>CyberAgent AI Lab<br>International Conference on Computer Vision (ICCV) 2023</span>
+            <span class="author-block"><sup>1</sup> The University of Tokyo &nbsp;<sup>2</sup> CyberAgent AI Lab <br>International Conference on Computer Vision (ICCV) 2023</span>
           </div>
 
           <div class="column has-text-centered">
@@ -112,23 +141,29 @@
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Attribute leakage problem in face recognition models</h2>
-          <p>
-            We examine identity similarity distributions between anchor and positive, negative, and swapped. 
-            The result shows that ArcFace underestimates the similarity for swapped images, resulting in the excessive identity guidance.
-            We solve this problem by simply training ArcFace with swapped images to bridge the gap between positive and swapped.
-          </p>
-          <img src="static/images/distribution.jpg" alt="Banner image" height="100%">
-        </div>
+      <div class="column is-full-width">
+        <h2 class="title is-3">Attribute leakage problem in face recognition models</h2>
+        <p>
+          We examine identity similarity distributions between anchor and positive, negative, and swapped. 
+          The result shows that ArcFace underestimates the similarity for swapped images, resulting in the excessive identity guidance on face-swapping.
+          We solve this problem by simply training ArcFace with swapped images to bridge the gap between positive and swapped.
+        </p>
+        <img src="static/images/distribution.jpg" alt="Banner image" height="100%">
       </div>
-      <!--/ Visual Effects. -->
+    </div>
 
-      <!-- Matting. -->
-      <div class="column">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Training face-swapping models with BlendFace</h2>
+        <p>
+          After pretraining of BlendFace, we replace ArcFace with BlendFace to train better-disentangled face-swapping models.
+        </p>
+        <img src="static/images/training.jpg" alt="Banner image" height="100%">
+      </div>
+    </div>
+      
+    <div class="columns is-centered">
+      <div class="column is-full-width">
         <h2 class="title is-3">Comparison with previous models</h2>
         <div class="columns is-centered">
           <div class="column content">
@@ -161,15 +196,6 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
